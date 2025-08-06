@@ -1,2 +1,3 @@
-# me2025-clase-PabloZR-ug
-me2025-clase-PabloZR-ug created by GitHub Classroom
+Repositorio de la clase de métodos numéricos
+
+6 de Agosto: Primera Clase uso básico de github
