@@ -1,0 +1,85 @@
+El diagrama de flujo se realizó con el siguiente código que programé en PSEINT:
+Algoritmo serie_de_maclaurin
+	Definir contador Como Entero
+	contador <- 0
+	Definir x Como Real
+	Definir errors, errora, eulerx, factorial, contfactorial, eulerx2 Como Real
+	Escribir 'Ingrese la variable x para el numero de euler'
+	Leer x
+	Escribir 'Ingrese el error máximo permitido en %'
+	Leer errors
+	eulerx <- 0
+	eulerx2 <- 0
+	Repetir
+		factorial <- 1
+		Si contador=0 Entonces
+			eulerx <- 1
+			contfactorial <- 1
+		SiNo
+			Repetir
+				factorial <- factorial*contfactorial
+				contfactorial <- contfactorial+1
+			Hasta Que contfactorial>contador
+		FinSi
+		eulerx <- eulerx+(x^contador)/factorial
+		errora <- (abs((eulerx-eulerx2)/eulerx))*100
+		contador <- contador+1
+		eulerx2 <- eulerx
+		contfactorial <- 1
+	Hasta Que errora<=errors
+	Escribir 'El resultado para el número de euler de la variable x=', x, 'es =', eulerx
+FinAlgoritmo
+
+Y con esto escribí el siguiente pseudocódigo:
+
+Se prepara un contador que empezará en 0
+Se crean variables para almacenar: el valor de x, los errores, el resultado actual y anterior, y el factorial
+
+2. Entrada de datos
+
+El programa pide al usuario que ingrese el valor de x (el exponente de e^x)
+También pide el error máximo permitido en porcentaje (qué tan preciso quiere el resultado)
+
+3. Inicialización
+
+Se inicializa el resultado actual (eulerx) en 0
+Se inicializa el resultado anterior (eulerx2) en 0 para poder comparar después
+
+4. Proceso iterativo principal
+El programa entra en un ciclo que se repite hasta que el error sea suficientemente pequeño:
+a) Cálculo del factorial
+
+Se prepara la variable factorial en 1
+Si es la primera vez (contador = 0):
+
+El resultado se establece en 1 (primer término de la serie)
+Se prepara el contador del factorial
+
+
+Si no es la primera vez:
+
+Se calcula el factorial del número actual multiplicando 1×2×3×...×contador
+
+
+
+b) Aplicación de la fórmula de Maclaurin
+
+Se suma al resultado actual el término: (x^contador)/factorial
+Esta es la fórmula de la serie: e^x = 1 + x + x²/2! + x³/3! + x⁴/4! + ...
+
+c) Cálculo del error
+
+Se calcula el error porcentual comparando el resultado actual con el anterior
+Error = |((resultado_actual - resultado_anterior) / resultado_actual)| × 100
+
+d) Preparación para la siguiente iteración
+
+Se aumenta el contador en 1 (para el siguiente término de la serie)
+Se guarda el resultado actual como "resultado anterior" para la próxima comparación
+Se reinicia el contador del factorial
+
+5. Condición de parada
+El ciclo se detiene cuando el error calculado es menor o igual al error máximo que el usuario especificó.
+6. Resultado final
+Una vez que se alcanza la precisión deseada, el programa muestra el valor calculado de e^x.
+
