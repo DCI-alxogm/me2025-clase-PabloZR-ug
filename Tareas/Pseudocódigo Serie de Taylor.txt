@@ -1,0 +1,82 @@
+El programa pide al usuario que ingrese la precisión deseada (error máximo permitido)
+También pide el número máximo de términos a calcular para evitar cálculos infinitos
+Solicita que elija cuál de las 5 funciones quiere calcular
+
+Entrada de parámetros
+
+Pide el valor de x donde se quiere evaluar la función
+Pide el centro de expansión x0 (punto alrededor del cual se hace la aproximación)
+Calcula la diferencia h = x - x0
+
+Validación y cálculo
+
+Según la función elegida, ejecuta el subproceso correspondiente
+Para ln(x) y sqrt(x) verifica que los valores sean positivos
+También advierte si la convergencia podría ser lenta
+
+Presentación de resultados
+
+Muestra el valor aproximado calculado
+Muestra el error estimado del cálculo
+
+Detalles de cada función:
+Función Exponencial (e^x)
+Fórmula: e^x = e^x0 × (1 + h + h²/2! + h³/3! + h⁴/4! + ...)
+Proceso:
+
+Calcula e^x0 como base
+Suma términos: cada uno es h^k dividido entre k! (k factorial)
+Para calcular el factorial: multiplica 1×2×3×...×k
+Se detiene cuando el término es suficientemente pequeño
+
+Función Coseno (cos(x))
+Fórmula: Usa las derivadas del coseno que siguen un patrón cíclico
+Proceso:
+
+Las derivadas del coseno siguen el ciclo: cos, -sen, -cos, sen, cos, -sen...
+Calcula cos(x0) y sen(x0) al inicio
+Cada término usa la derivada correspondiente × h^k / k!
+El patrón se repite cada 4 términos
+
+Función Seno (sen(x))
+Fórmula: Similar al coseno pero con diferente patrón de derivadas
+Proceso:
+
+Las derivadas del seno siguen: sen, cos, -sen, -cos, sen, cos...
+Calcula sen(x0) y cos(x0) al inicio
+Suma términos siguiendo el patrón cíclico de derivadas
+
+Función Logaritmo Natural (ln(x))
+Fórmula: ln(x) = ln(x0) + (h/x0) - (h/x0)²/2 + (h/x0)³/3 - (h/x0)⁴/4 + ...
+Proceso:
+
+Calcula la razón y = h/x0
+Empieza con ln(x0)
+Suma términos alternando signos: positivo, negativo, positivo...
+Cada término es y^k/k con signo alternante
+
+Función Raíz Cuadrada (sqrt(x))
+Fórmula: sqrt(x) = sqrt(x0) × serie_binomial
+Proceso:
+
+Usa coeficientes binomiales especiales para potencias fraccionarias
+Calcula sqrt(x0) como base
+Los coeficientes siguen la fórmula: c(k+1) = c(k) × (0.5-k)/(k+1)
+Multiplica por potencias de y = h/x0
+
+Características comunes:
+Control de precisión
+
+Cada subproceso calcula términos hasta que sean suficientemente pequeños
+Compara el valor absoluto de cada término con el error máximo permitido
+Si un término es menor que el error permitido, se detiene
+
+Control de iteraciones
+
+Tiene un límite máximo de términos para evitar cálculos infinitos
+Si llega al máximo sin alcanzar la precisión, se detiene de todos modos
+
+Cálculo de errores
+
+Estima el error mirando el tamaño del último término calculado
+Proporciona una idea de qué tan confiable es la aproximación
