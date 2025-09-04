@@ -1,0 +1,81 @@
+Bienvenida y explicación
+
+El programa saluda al usuario y explica que calculará derivadas usando métodos numéricos basados en Taylor
+Le dice que necesitará información sobre tres puntos de la función
+
+Recolección de datos de los puntos
+El programa pide al usuario que ingrese información sobre tres puntos consecutivos:
+Primer punto (x_{i-1}):
+
+Pide el valor de x en el punto anterior (x_{i-1})
+Pide el valor de la función en ese punto (f(x_{i-1}))
+
+Segundo punto (x_i):
+
+Pide el valor de x en el punto central (x_i)
+Pide el valor de la función en ese punto (f(x_i))
+
+Tercer punto (x_{i+1}):
+
+Pide el valor de x en el punto siguiente (x_{i+1})
+Pide el valor de la función en ese punto (f(x_{i+1}))
+
+Valor verdadero para comparación
+
+El programa pide el valor verdadero de la derivada (si se conoce)
+Este valor se usa para calcular qué tan precisos son los diferentes métodos
+
+Cálculo del espaciado
+
+Calcula la distancia h entre los puntos: h = x - x_{i-1}
+Esta distancia se usa en las fórmulas de diferenciación
+
+ Aplicación de los tres métodos de diferenciación
+Método de Diferencia Hacia Adelante:
+
+Usa los puntos actuales y futuros
+Fórmula: (f(x_{i+1}) - f(x_i)) / (x_{i+1} - x_i)
+Aproxima la derivada usando la pendiente entre el punto actual y el siguiente
+
+Método de Diferencia Hacia Atrás:
+
+Usa los puntos pasados y actuales
+Fórmula: (f(x_i) - f(x_{i-1})) / h
+Aproxima la derivada usando la pendiente entre el punto anterior y el actual
+
+Método de Diferencia Centrada:
+
+Usa los puntos anterior y posterior, saltándose el central
+Fórmula: (f(x_{i+1}) - f(x_{i-1})) / (2×h)
+Aproxima la derivada usando la pendiente entre los puntos extremos, dividida entre dos
+
+Cálculo de errores
+Para cada método, el programa calcula qué tan preciso es:
+
+Error = |Valor_verdadero - Valor_calculado| / |Valor_verdadero|
+Esto da el error relativo (como porcentaje de qué tanto se equivoca cada método)
+
+Presentación de resultados
+El programa muestra para cada método:
+
+El valor calculado de la derivada
+El error correspondiente comparado con el valor verdadero
+
+¿Por qué tres métodos diferentes?
+Diferencia Hacia Adelante:
+
+Es simple pero menos precisa
+Usa información "futura" para estimar la pendiente actual
+Buena cuando solo tenemos datos hacia adelante
+
+Diferencia Hacia Atrás:
+
+Similar precisión a la hacia adelante
+Usa información "pasada" para estimar la pendiente actual
+Buena cuando solo tenemos datos anteriores
+
+Diferencia Centrada:
+
+Generalmente la más precisa de las tres
+Usa información de ambos lados del punto central
+Balancea los errores de ambos lados
