@@ -79,3 +79,40 @@ Diferencia Centrada:
 Generalmente la más precisa de las tres
 Usa información de ambos lados del punto central
 Balancea los errores de ambos lados
+
+Código PSEINT
+
+Algoritmo derivadas_taylor_orden1
+	// Código para diferenciación usando Taylor.
+	// En este caso se necesitan el valor de x para tres puntos
+	// Y en el caso de requerirse el cálculo del errort, se necesita el valor verdadero
+	Definir x_1, x, x_11, fx_1, fx, fx_11, h Como Real
+	Escribir 'Bienvenido al programa de diferenciación de taylor.'
+	Escribir 'Ingresa el valor de x_(i-1)'
+	Leer x_1
+	Escribir 'Ingresa el valor de f(x_(i-1))'
+	Leer fx_1
+	Escribir 'Ingresa el valor de x'
+	Leer x
+	Escribir 'Ingresa el valor de f(x)'
+	Leer fx
+	Escribir 'Ingresa el valor de x_(i+1)'
+	Leer x_11
+	Escribir 'Ingresa el valor de f(x_(i+1))'
+	Leer fx_11
+	Definir Valor_verdadero, e_ade, e_atra, e_cent Como Real
+	Escribir 'Ingresa al valor verdadero: '
+	Leer Valor_verdadero
+	Definir dif_adelante, dif_atras, dif_centrada Como Real
+	h <- x-x_1
+	dif_adelante <- (fx_11-fx)/(x_11-x)
+	dif_atras <- (fx-fx_1)/h
+	dif_centrada <- (fx_11-fx_1)/(2*h)
+	e_ade <- abs((Valor_verdadero-dif_adelante)/Valor_verdadero)
+	e_atra <- abs((Valor_verdadero-dif_atras)/Valor_verdadero)
+	e_cent <- abs((Valor_verdadero-dif_centrada)/Valor_verdadero)
+	Escribir 'El valor de la diferencial adelante es: ', dif_adelante, ' Con un error de: ', e_ade
+	Escribir 'El valor de la diferencial atras es: ', dif_atras, ' Con un error de: ', e_atra
+	Escribir 'El valor de la diferencial centrada es: ', dif_centrada, ' Con un error de: ', e_cent
+FinAlgoritmo
+
