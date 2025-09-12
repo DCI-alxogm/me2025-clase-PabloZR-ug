@@ -10,9 +10,9 @@ int main()
 {
     float a, b, k, err_max, err_ir, K_old, e_puro;
     int cont = 0;
-    print("Ingresa el valor de A: ");
+    printf("Ingresa el valor de A: ");
     scanf("%f", &a);
-    print("\nIngresa el valor de B: ");
+    printf("\nIngresa el valor de B: ");
     scanf("%f", &b);
     err_max = 0.05;
     e_puro = 0.05;
