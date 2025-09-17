@@ -20,14 +20,14 @@ int main() {
     scanf(" %f", &a);
     printf("Ingresa el valor de B: ");
     scanf(" %f", &b);
-    err_max = 0.05;
+    err_max = 0.0005;
     e_puro = 0.99;
     err_ir = 0.99;
     a_f = a;
     b_f = b;
 
     if (funcion1(a) * funcion1(b) <= 0.0f) {
-        while ((err_ir > err_max && e_puro > err_max) && cont <= 200) {
+        while ((err_ir > err_max || err_ir_falso > err_max) && cont <= 200) {
             k_falso = ((funcion1(b_f) * a_f) - (funcion1(a_f) * b_f)) / (funcion1(b_f) - funcion1(a_f));
             k = (a + b) / 2;
             if (funcion1(k) * funcion1(a) < 0) {
