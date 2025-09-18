@@ -1,0 +1,37 @@
+La busqueda de raíces se puede hacer por dos categorías de métodos una es la convergencia y la otra es la divergencia
+
+En la convergencia cada iteración nos acerca más a la raiz. 
+
+En la divergencia. Cada iteración nos deja cada vez más lejos de la raíz. 
+
+Para los métodos abiertos se tienen los siguientes:
+
+ - Punto Fijo
+ - Newton-Rapson
+
+Punto Fijo 
+  f(x) = 0
+Que se puede escribir como:
+ x = g(x)
+
+Por ejemplo:
+f(x) = e^-x - x = 0 
+ x = e^-x
+g(x) = e^-x
+x = g(x) 
+
+ Y logicamente... se puede hacer lo siguiente:
+f(x) = 0 
+x + f(x) = 0 + x
+x = f(X) + x
+g(x) = f(x) + x
+
+Por lo tanto... el método de punto fijo consiste en evaluar g(x) de forma iterativa, ie. 
+
+x_(i+1) = g(x_i)
+
+
+
+
+
+
