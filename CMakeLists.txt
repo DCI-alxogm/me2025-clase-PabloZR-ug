@@ -16,4 +16,5 @@ add_executable(Métodos_Numéricos
         Tareas/formula_general1.c
         Tareas/serie_de_taylor.c
         Tareas/Tarea13_Agosto_2025.c
-        Semana6/ejercicio_clase_errores.c)
+        Semana6/ejercicio_clase_errores.c
+)
