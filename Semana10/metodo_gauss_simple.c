@@ -4,6 +4,7 @@
 
 void imprimir_raices(const double A[N][N+1]);
 int eliminacion_adelante(double A[N][N+1]);
+int sustitucion(const double A[N][N+1], double x[N]);
 
 int main()
 {
@@ -11,19 +12,45 @@ int main()
            "gauss simple\n");
     double matriz[3][4] = {0};
     for (int i = 0; i < 3; i++) {
-        printf("Ingresa los elementos de la primera fila separador por espacios:\n"
+        printf("Ingresa los elementos de las filas dando enter al final de cada elemento:\n"
           "Fila %d (a%d1 a%d2 a%d3 b%d): ", i+1, i+1, i+1, i+1, i+1);
         for (int j = 0; j < 4; j++) {
             scanf("%lf", &matriz[i][j]);
         }
     }
+    printf("Matriz aumentada ingresada \n");
+    imprimir_raices(matriz);
+    eliminacion_adelante(matriz);
 
-#hola
+    printf("Matriz triangular tras eliminación \n");
+    imprimir_raices(matriz);
+
+    double x[N] = {0};
+    sustitucion(matriz, x);
+    printf("\nSolucion:\n");
+    for (int i = 0; i < N; ++i) {
+        printf("x%d = %.10g\n", i+1, x[i]);
+    }
+
 
 
 
     return 0;
 }
+
+int sustitucion(const double A[N][N+1], double x[N]) {
+    for (int i = N-1; i >= 0; --i) {
+        double sum = 0.0;
+        for (int j = i+1; j < N; ++j) {
+            sum += A[i][j] * x[j];
+        }
+        double denom = A[i][i];
+        if (fabs(denom) < 1e-12) return -1; // singular
+        x[i] = (A[i][N] - sum) / denom;
+    }
+    return 0;
+}
+
 
 int eliminacion_adelante(double A[N][N+1]) {
     for (int k = 0; k < N-1; ++k) {
@@ -42,7 +69,7 @@ int eliminacion_adelante(double A[N][N+1]) {
         }
     }
 }
-void imprimir_raices(const double A[N][N]) {
+void imprimir_raices(const double A[N][N+1]) {
     for (int i = 0; i < N; ++i) {
         printf("[ ");
         for (int j = 0; j < N; ++j) {
