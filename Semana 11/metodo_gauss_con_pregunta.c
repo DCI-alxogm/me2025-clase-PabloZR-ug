@@ -11,11 +11,14 @@ int main()
     printf("Bienvenido al programa de resolución de matrices por el método de "
            "gauss simple\n");
     double matriz[3][4] = {0};
+    printf("Ingresa la matriz aumentada 3x4.\n");
+    printf("Escribe cada fila en una sola línea, separando columnas con espacios (a11 a12 a13 b1).\n");
     for (int i = 0; i < 3; i++) {
-        printf("Ingresa los elementos de las filas dando enter al final de cada elemento:\n"
-          "Fila %d (a%d1 a%d2 a%d3 b%d): ", i+1, i+1, i+1, i+1, i+1);
+        printf("Fila %d: ", i+1);
         for (int j = 0; j < 4; j++) {
-            scanf("%lf", &matriz[i][j]);
+            if (scanf("%lf", &matriz[i][j]) != 1) {
+                printf("Entrada inválida.\n");
+            }
         }
     }
     printf("Matriz aumentada ingresada \n");
