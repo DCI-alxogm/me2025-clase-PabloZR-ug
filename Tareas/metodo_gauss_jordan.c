@@ -3,15 +3,14 @@
 #define N 3
 
 void imprimir_raices(const double A[N][N+1]);
-int eliminacion_adelante(double A[N][N+1]);
-int sustitucion(const double A[N][N+1], double x[N]);
+int gauss_jordan(double A[N][N+1]);
 void swap_rows(double A[N][N+1], int r1, int r2);
 int asegurar_pivote(double A[N][N+1], int k);
 
 int main()
 {
     printf("Bienvenido al programa de resolución de matrices por el método de "
-           "gauss simple\n");
+           "gauss-jordan\n");
     double matriz[3][4] = {0};
     printf("Ingresa la matriz aumentada 3x4.\n");
     printf("Escribe cada fila en una sola línea, separando columnas con espacios (a11 a12 a13 b1).\n");
@@ -25,16 +24,14 @@ int main()
     }
     printf("Matriz aumentada ingresada \n");
     imprimir_raices(matriz);
-    eliminacion_adelante(matriz);
+    gauss_jordan(matriz);
 
-    printf("Matriz triangular tras eliminación \n");
+    printf("Matriz reducida (Gauss-Jordan) \n");
     imprimir_raices(matriz);
 
-    double x[N] = {0};
-    sustitucion(matriz, x);
     printf("\nSolucion:\n");
     for (int i = 0; i < N; ++i) {
-        printf("x%d = %.10g\n", i+1, x[i]);
+        printf("x%d = %.10g\n", i+1, matriz[i][N]);
     }
 
     return 0;
@@ -64,32 +61,21 @@ int asegurar_pivote(double A[N][N+1], int k) {
     return 0;
 }
 
-int sustitucion(const double A[N][N+1], double x[N]) {
-    for (int i = N-1; i >= 0; --i) {
-        double sum = 0.0;
-        for (int j = i+1; j < N; ++j) {
-            sum += A[i][j] * x[j];
-        }
-        double denom = A[i][i];
-        if (fabs(denom) < 1e-12) return -1;
-        x[i] = (A[i][N] - sum) / denom;
-    }
-    return 0;
-}
-
-int eliminacion_adelante(double A[N][N+1]) {
-    for (int k = 0; k < N-1; ++k) {
+int gauss_jordan(double A[N][N+1]) {
+    for (int k = 0; k < N; ++k) {
         if (asegurar_pivote(A, k) != 0) return -1;
-        double eliminador = A[k][k];
-        for (int i = k+1; i < N; ++i) {
-            double m = A[i][k] / eliminador;
-            A[i][k] = 0.0;
-            for (int j = k+1; j < N+1; ++j) {
+        double pivote = A[k][k];
+        for (int j = 0; j < N+1; ++j) {
+            A[k][j] /= pivote;
+        }
+        for (int i = 0; i < N; ++i) {
+            if (i == k) continue;
+            double m = A[i][k];
+            for (int j = 0; j < N+1; ++j) {
                 A[i][j] -= m * A[k][j];
             }
         }
     }
-    if (fabs(A[N-1][N-1]) < 1e-12) return -1;
     return 0;
 }
 
