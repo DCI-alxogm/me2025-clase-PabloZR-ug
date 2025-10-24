@@ -37,3 +37,15 @@ Sustituyendo estos resultados se llega a la solución:
 x1 = 3
 x2 = -2.5
 x3 = 7
+
+Método Gauss-Seidel
+
+Matriz aumentada ingresada
+[   3.000000  -0.100000  -0.200000 |   7.850000 ]
+[   0.100000   7.000000  -0.300000 | -19.300000 ]
+[   0.300000  -0.200000  10.000000 |  71.400000 ]
+
+Solucion:
+x1 = 3
+x2 = -2.5
+x3 = 7
