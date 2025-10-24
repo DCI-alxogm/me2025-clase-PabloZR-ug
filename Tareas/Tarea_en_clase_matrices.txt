@@ -1,0 +1,39 @@
+Aquí se encuentran los resultados de la tarea de matrices
+Para el primer ejercicio se tiene la siguiente matriz aumentada
+[   3.000000  -0.100000  -0.200000 |   7.850000 ]
+[   0.100000   7.000000  -0.300000 | -19.300000 ]
+[   0.300000  -0.200000  10.000000 |  71.400000 ]
+
+Que se tiene que resolver con los métodos de Gauss-Jordan, Factorización LU y Gauss-Seidel
+
+El primer resultado es el siguiente con la matriz reducida resultante como sigue:
+[   1.000000   0.000000   0.000000 |   3.000000 ]
+[   0.000000   1.000000   0.000000 |  -2.500000 ]
+[   0.000000   0.000000   1.000000 |   7.000000 ]
+
+Matriz Gauss-Jordan
+[   1.000000   0.000000   0.000000 |   3.000000 ]
+[   0.000000   1.000000   0.000000 |  -2.500000 ]
+[   0.000000   0.000000   1.000000 |   7.000000 ]
+
+Factorización LU
+
+Vector Y (soluci├│n intermedia de LY=B):
+y1 = 7.850000
+y2 = -19.823333
+y3 = 68.761487
+
+Matriz L
+[   1.000000   0.000000   0.000000 ]
+[   0.033333   1.000000   0.000000 ]
+[   0.100000  -0.027130   1.000000 ]
+
+Vector X (soluci├│n final de UX=Y):
+x1 = 2.989762
+x2 = -2.542897
+x3 = 6.867879
+
+Sustituyendo estos resultados se llega a la solución:
+x1 = 3
+x2 = -2.5
+x3 = 7
