@@ -1,0 +1,1 @@
+Directorio de los archivos revisados en la semana 12 del curso de métodos numéricos. 

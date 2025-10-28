@@ -1,0 +1,1 @@
+Este es el directorio de la semana 13 del curso de métodos numéricos

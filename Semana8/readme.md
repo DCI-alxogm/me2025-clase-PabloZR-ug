@@ -1,0 +1,1 @@
+Este el repositorio de los archivos revisados en la semana 8 del curso de métodos numéricos.
