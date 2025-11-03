@@ -1,0 +1,56 @@
+En este archivo se recopilan las soluciones al segundo ejercicio del 22/10/2025
+
+Estos son los resultados del primer inciso.
+
+Matriz U (triangular superior):
+[  15.000000  -3.000000  -1.000000 ]
+[   0.000000  17.400000  -6.200000 ]
+[   0.000000   0.000000  10.402299 ]
+
+Matriz L (triangular inferior):
+[   1.000000   0.000000   0.000000 ]
+[  -0.200000   1.000000   0.000000 ]
+[  -0.600000  -0.160920   1.000000 ]
+
+Producto L*U (debe aproximarse a A original):
+[  15.000000  -3.000000  -1.000000 ]
+[  -3.000000  18.000000  -6.000000 ]
+[  -9.000000  -1.000000  12.000000 ]
+
+Vector Y (soluci├│n intermedia de LY=B):
+y1 = 3800.000000
+y2 = 2720.000000
+y3 = 7663.103448
+
+Vector X (soluci├│n final de UX=Y):
+x1 = 386.207913
+x2 = 418.814885
+x3 = 736.674033
+
+Matriz U (triangular superior):
+[  15.000000  -3.000000  -1.000000 ]
+[   0.000000  17.400000  -6.200000 ]
+[   0.000000   0.000000  10.402299 ]
+
+Matriz L (triangular inferior):
+[   1.000000   0.000000   0.000000 ]
+[  -0.200000   1.000000   0.000000 ]
+[  -0.600000  -0.160920   1.000000 ]
+
+Producto L*U (debe aproximarse a A original):
+[  15.000000  -3.000000  -1.000000 ]
+[  -3.000000  18.000000  -6.000000 ]
+[  -9.000000  -1.000000  12.000000 ]
+
+Vector Y (soluci├│n intermedia de LY=B):
+y1 = 3300.000000
+y2 = 2320.000000
+y3 = 6950.459770
+
+Vector X (soluci├│n final de UX=Y):
+x1 = 338.827459
+x2 = 371.415381
+x3 = 668.165746
+
+Inciso 2 con reducciones en las entradas al reactor 1 y reactor 2
+
