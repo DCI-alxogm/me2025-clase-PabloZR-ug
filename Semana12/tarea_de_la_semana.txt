@@ -53,5 +53,3 @@ x2 = 371.415381
 x3 = 668.165746
 
 Inciso 2 con reducciones en las entradas al reactor 1 y reactor 2
-
-1
