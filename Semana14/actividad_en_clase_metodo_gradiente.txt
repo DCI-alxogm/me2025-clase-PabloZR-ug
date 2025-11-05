@@ -1,0 +1,4 @@
+Para la función, f(x,y) = 2xy + 2x -  x^2 -2y^2 se aplicará el método del gradiente, con las derivadas analíticas
+Inicia en: x0 = -1, yo = 1
+
+(De tarea será con las derivadas numéricas)
