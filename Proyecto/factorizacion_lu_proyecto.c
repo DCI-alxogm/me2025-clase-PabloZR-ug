@@ -66,6 +66,14 @@ int asegurar_pivote(double A[N][N+1], int k) {
     swap_rows(A, k, r);
     return 0;
 }
+/*
+ *Busca en la columa k desde a fila k hacia abajo el elemento con el mayor  valor
+ *Almacena el indice
+ *Busca fallo en caso de que el pivote sea muy pequeño
+ *Si hay un pivote valido se llama a la función swap rows para mover la fila con el pivote mas grande
+ *a la posicion k
+*/
+
 
 int gauss_jordan(double A[N][N+1]) {
     for (int k = 0; k < N; ++k) {
@@ -84,6 +92,15 @@ int gauss_jordan(double A[N][N+1]) {
     }
     return 0;
 }
+/*
+ *Esta función llama a otras funciones como asegurar pivote para encontrar
+ *los resultados del metodo gauss jordan.
+ *Primero se itera sobre cada columna y fila k de 0 a N-1 y llama a la función asegurar pivote
+ *Normaliza la fila
+ *Y procede a la eliminación iterando sobre las filas no normalizadas (excepto la fila pivote k)
+ *obtiene el multiplicador (valor que se eliminará)
+ *Procede a la reduccio´n de la matriz.
+*/
 
 void imprimir_raices(const double A[N][N+1]) {
     for (int i = 0; i < N; ++i) {
@@ -94,3 +111,8 @@ void imprimir_raices(const double A[N][N+1]) {
         printf("| %10.6f ]\n", A[i][N]);
     }
 }
+/*
+ *La funciónn itera sobre cada fila i y j de la matriz y imprime los coeficientes
+ *con un separados
+ *Se formatearón los números con coma flotante a  6 decimales.
+*/
