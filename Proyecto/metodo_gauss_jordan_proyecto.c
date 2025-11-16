@@ -71,7 +71,7 @@ int asegurar_pivote(double A[N][N+1], int k) {
  *Almacena el indice
  *Busca fallo en caso de que el pivote sea muy pequeño
  *Si hay un pivote valido se llama a la función swap rows para mover la fila con el pivote mas grande
- *a la posicion k
+ *a la posicion kz
 */
 
 
