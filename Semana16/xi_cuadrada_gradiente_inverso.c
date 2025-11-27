@@ -184,4 +184,4 @@ int resolver_4x4(double A[P][P], double b[P], double x[P]){
     for (int i=3;i>=0;--i){ double s=b[i]; for (int j=i+1;j<4;++j) s-=A[i][j]*x[j]; x[i]=s/A[i][i]; }
     return 0;
 }
-//
+//1
