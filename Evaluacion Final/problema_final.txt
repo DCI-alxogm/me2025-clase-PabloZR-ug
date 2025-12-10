@@ -15,3 +15,5 @@ dos métodos
 
 --- Fin del planteamiento.
 
+Al final se aprecia que con un paso de 0.1 se es capaz de encontrar el resultado con ambos métodos.
+Aunque 0.01 refinaría los resultados para casos exigentes.

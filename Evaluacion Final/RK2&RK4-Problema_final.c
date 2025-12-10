@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <math.h>
-
+//Limite para el array del tiempo
 #define MAXP 10000
 
 double k = 0.45;
