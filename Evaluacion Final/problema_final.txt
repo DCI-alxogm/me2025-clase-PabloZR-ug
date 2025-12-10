@@ -1,0 +1,17 @@
+Se tiene una reacción química
+
+A + B = 2B
+
+El modelo que rije este comportamiento es
+
+dC/dt = k C(t) (Cmax-C(t))
+
+En este caso se aplica el código generado en la última sección (con pequeños cambios)  para encontrar la concentración del producto
+en función del tiempo en un intervalo de 0 a 25 min. Usando RK2 y RK4.
+
+Al final se hace la comparación de los dos métodos y se busca un delta t con el cual se logre obtener el mismo resultado con los
+dos métodos
+
+
+--- Fin del planteamiento.
+
